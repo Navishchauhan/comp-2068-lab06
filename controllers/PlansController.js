@@ -2,7 +2,8 @@ const viewPath = 'plans';
 const Plan = require('../models/plan');
 const User = require('../models/user');
 
-exports.index = async (req, res) => {
+exports.index = async (req, res) => 
+{
   try {
     const plans = await Plan
       .find()
@@ -19,7 +20,8 @@ exports.index = async (req, res) => {
   }
 };
 
-exports.show = async (req, res) => {
+exports.show = async (req, res) => 
+{
   try {
     const plan = await Plan.findById(req.params.id)
     .populate('user');

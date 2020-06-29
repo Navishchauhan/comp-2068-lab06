@@ -3,7 +3,7 @@ const { new: _new, create, delete: _delete } = require('../controllers/SessionsC
 
 function auth (req, res, next) {
   if (!req.isAuthenticated()) {
-    req.flash('danger', 'You need to login first.');
+    req.flash('Danger!', 'You need to login first.');
     return res.redirect('/login');
   }
   next();

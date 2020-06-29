@@ -7,7 +7,8 @@ exports.new = async (req, res) => {
   });
 };
 
-exports.create = async (req, res) => {
+exports.create = async (req, res) => 
+{
   try {
     const user = new User(req.body);
     // Step 1: Register a new user

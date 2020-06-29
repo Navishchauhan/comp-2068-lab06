@@ -20,7 +20,6 @@ exports.create = (req, res, next) => {
   };
 
 // Step 3: Add the logout logic
-
 exports.delete = (req, res) => {
     req.logout();
     req.flash('success', 'You were logged out successfully.');
