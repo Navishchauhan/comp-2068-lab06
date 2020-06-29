@@ -6,6 +6,7 @@ exports.index = async (req, res) => {
   try {
     const plans = await Plan
       .find()
+      .populate('user')
       .sort({updatedAt: 'desc'});
 
     res.render(`${viewPath}/index`, {
@@ -20,8 +21,8 @@ exports.index = async (req, res) => {
 
 exports.show = async (req, res) => {
   try {
-    const plan = await Plan.findById(req.params.id);
-      
+    const plan = await Plan.findById(req.params.id)
+    .populate('user');
     res.render(`${viewPath}/show`, {
       pageTitle: plan.title,
       plan: plan
